@@ -1,0 +1,34 @@
+.PHONY: $(TOPTARGETS) $(SUBDIRS)
+
+.PHONY: build publish clean
+
+SOURCE_DOCKER_REGISTRY  ?= localhost:5000
+PUBLISH_DOCKER_REGISTRY ?= localhost:5000
+IMAGE_ARCH              ?= haswell
+LOCAL_SOURCES_SERVER    ?= http://localhost:8000
+
+default: build publish
+
+build:
+	for f in */; do \
+	  SOURCE_DOCKER_REGISTRY=${SOURCE_DOCKER_REGISTRY} \
+	  PUBLISH_DOCKER_REGISTRY=${PUBLISH_DOCKER_REGISTRY} \
+	  IMAGE_ARCH=${IMAGE_ARCH} \
+	  LOCAL_SOURCES_SERVER=${LOCAL_SOURCES_SERVER} \
+	  $(MAKE) -C $${f} build || exit 1; done
+
+publish:
+	for f in */; do \
+	  SOURCE_DOCKER_REGISTRY=${SOURCE_DOCKER_REGISTRY} \
+	  PUBLISH_DOCKER_REGISTRY=${PUBLISH_DOCKER_REGISTRY} \
+	  IMAGE_ARCH=${IMAGE_ARCH} \
+	  LOCAL_SOURCES_SERVER=${LOCAL_SOURCES_SERVER} \
+	  $(MAKE) -C $${f} publish || exit 1; done
+
+clean:
+	for f in */; do \
+	  SOURCE_DOCKER_REGISTRY=${SOURCE_DOCKER_REGISTRY} \
+	  PUBLISH_DOCKER_REGISTRY=${PUBLISH_DOCKER_REGISTRY} \
+	  IMAGE_ARCH=${IMAGE_ARCH} \
+	  LOCAL_SOURCES_SERVER=${LOCAL_SOURCES_SERVER} \
+	  $(MAKE) -C $${f} clean; done
