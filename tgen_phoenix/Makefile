@@ -4,7 +4,7 @@
 
 SOURCE_DOCKER_REGISTRY  ?= localhost:5000
 PUBLISH_DOCKER_REGISTRY ?= localhost:5000
-IMAGE_ARCH              ?= haswell
+IMAGE_ARCH              ?= sandybridge
 LOCAL_SOURCES_SERVER    ?= http://localhost:8000
 
 default: build publish
