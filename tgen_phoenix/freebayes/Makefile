@@ -4,7 +4,7 @@ MAKEFILE_PATH           := $(abspath $(lastword $(MAKEFILE_LIST)))
 IMAGE_NAME              ?= tgen_phoenix_$$(basename $$(dirname ${MAKEFILE_PATH}) )
 SOURCE_DOCKER_REGISTRY  ?= localhost:5000
 PUBLISH_DOCKER_REGISTRY ?= localhost:5000
-IMAGE_PIPELINE_VERSION  ?= 20200824
+IMAGE_PIPELINE_VERSION  ?= 20210113
 IMAGE_ARCH              ?= sandybridge
 IMAGE_TAG               ?= ${PUBLISH_DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_PIPELINE_VERSION}-${IMAGE_ARCH}
 
