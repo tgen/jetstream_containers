@@ -1,5 +1,5 @@
 ARG SOURCE_DOCKER_REGISTRY=localhost:5000
-ARG IMAGE_ARCH=haswell
+ARG IMAGE_ARCH=sandybridge
 
 FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_python-3.8.6.headless:${IMAGE_ARCH} AS opt_python
 

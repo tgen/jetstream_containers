@@ -1,5 +1,5 @@
 ARG SOURCE_DOCKER_REGISTRY=localhost:5000
-ARG IMAGE_ARCH=haswell
+ARG IMAGE_ARCH=sandybridge
 
 FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_vardict-1.8.1:${IMAGE_ARCH} AS opt_vardict
 FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_bedtools-2.29.2:${IMAGE_ARCH} AS opt_bedtools

@@ -11,4 +11,6 @@ COPY --from=opt_bedtools /opt/ /opt/
 
 RUN mkdir -p /opt/bin/ && echo "#!/bin/bash" > /opt/bin/module && chmod a+x /opt/bin/module
 
+ENV JS_PIPELINE_PATH /
+
 LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers

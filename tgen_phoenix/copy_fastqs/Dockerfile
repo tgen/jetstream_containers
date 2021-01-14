@@ -1,5 +1,5 @@
 ARG SOURCE_DOCKER_REGISTRY=localhost:5000
-ARG IMAGE_ARCH=haswell
+ARG IMAGE_ARCH=sandybridge
 
 FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_rsync-3.2.3:${IMAGE_ARCH} as opt_rsync
 
