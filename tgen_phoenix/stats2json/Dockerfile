@@ -7,8 +7,10 @@ FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_base:${IMAGE_ARCH}
 
 COPY --from=opt_python /opt/ /opt/
 
+ENV JS_PIPELINE_PATH /opt/
+
 ENV PATH_TO_PHOENIX_REPO /opt/phoenix/
-COPY samStats2json.py /opt/phoenix/required_scripts/
+COPY samStats2json_deb00a0.py /opt/phoenix/required_scripts/
 
 RUN mkdir -p /opt/bin/ && echo "#!/bin/bash" > /opt/bin/module && chmod a+x /opt/bin/module
 

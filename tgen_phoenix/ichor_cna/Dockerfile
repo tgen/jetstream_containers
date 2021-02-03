@@ -1,7 +1,8 @@
 ARG SOURCE_DOCKER_REGISTRY=localhost:5000
 ARG IMAGE_ARCH=sandybridge
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_r-4.0.2.headless.genomic:${IMAGE_ARCH} AS opt_r
+FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_r-4.0.2.genomic:${IMAGE_ARCH} AS opt_r
+FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_poppler-21.01.0:${IMAGE_ARCH} AS opt_poppler
 
 FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_tools:${IMAGE_ARCH} as build
 
@@ -25,9 +26,11 @@ FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_base:${IMAGE_ARCH}
 
 COPY --from=build /opt/ /opt/
 COPY --from=build /tools/bin/which /tools/bin/which
+COPY --from=opt_poppler /opt/ /opt/
 
-ENV PATH_TO_PHOENIX_REPO /opt/phoenix/
 COPY runIchorCNA_47ce8db.R /opt/phoenix/required_scripts/
+ENV JS_PIPELINE_PATH /opt/phoenix/
 
 RUN mkdir -p /opt/bin/ && echo "#!/bin/bash" > /opt/bin/module && chmod a+x /opt/bin/module
 LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers
+
