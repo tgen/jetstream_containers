@@ -1,7 +1,7 @@
 ARG SOURCE_DOCKER_REGISTRY=localhost:5000
 ARG IMAGE_ARCH=sandybridge
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_python-3.8.5.headless:${IMAGE_ARCH} AS opt_python3
+FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_python-3.8.6.headless:${IMAGE_ARCH} AS opt_python3
 FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_python-2.7.18.headless:${IMAGE_ARCH} AS opt_python2
 FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_curl-7.70.0:${IMAGE_ARCH} AS opt_curl
 FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_grep-3.4:${IMAGE_ARCH} AS opt_grep
