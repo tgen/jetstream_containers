@@ -26,8 +26,8 @@ COPY --from=opt_grep /opt/ /opt/
 COPY --from=opt_gawk /opt/ /opt/
 COPY --from=build /opt/ /opt/
 
-ENV PATH_TO_PHOENIX_REPO /opt/phoenix/
-COPY mm_igtx_pairoscope_calling_b38_fd920d4.py /opt/phoenix/required_scripts/
+ENV JS_PIPELINE_PATH /opt/phoenix/
+COPY mm_igtx_pairoscope_calling_b38_f3010c3.py /opt/phoenix/required_scripts/
 
 RUN mkdir -p /opt/bin/ && echo "#!/bin/bash" > /opt/bin/module && chmod a+x /opt/bin/module
 LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers
