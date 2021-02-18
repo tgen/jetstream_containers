@@ -9,5 +9,7 @@ FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_base:${IMAGE_ARCH}
 COPY --from=opt_grep /opt/ /opt/
 COPY --from=opt_gawk /opt/ /opt/
 
+COPY ensembl97_ucsc_mappings_keats.csv /opt/utility_files/
+
 LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers
 
