@@ -61,4 +61,4 @@ CMD ["bash", "--init-file", "/gatk/gatkenv.rc"]
 
 # End GATK Python environment
 
-LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers
+LABEL org.opencontainers.image.source="https://github.com/tgen/jetstream_containers"
