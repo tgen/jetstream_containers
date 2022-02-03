@@ -179,4 +179,4 @@ RUN echo >> $OPT/.profile && \
     # Run INSTALL.pl and remove the ensemb-vep tests and travis
     ./INSTALL.pl -a a -l && rm -rf t travisci .travis.yml
 
-LABEL org.opencontainers.image.source="https://github.com/tgen/jetstream_containers"
+LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers
