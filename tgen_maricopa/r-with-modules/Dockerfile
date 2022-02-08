@@ -16,6 +16,6 @@ RUN chmod +x module_install.sh
 RUN ./module_install.sh
 RUN rm module_install.sh
 RUN rm R_modules.csv
-RUN sed -i "s/options(show.error.messages = TRUE)/options(bitmapType='cairo')/g" /usr/local/lib/R/library/base/RRprofile
+RUN sed -i "s/options(show.error.messages = TRUE)/options(bitmapType='cairo')/g" /usr/local/lib/R/library/base/R/Rprofile
 
 LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers
