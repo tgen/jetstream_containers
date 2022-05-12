@@ -1,15 +1,15 @@
-ARG SOURCE_DOCKER_REGISTRY=localhost:5000
-ARG IMAGE_ARCH=sandybridge
+ARG SOURCE_CONTAINER_REGISTRY=localhost:5000
+ARG IMAGE_ARCH=skylake
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_python-3.8.6.headless:${IMAGE_ARCH} AS opt_python
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_python-3.8.6.headless:${IMAGE_ARCH} AS opt_python
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_tools:${IMAGE_ARCH} AS build
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_tools:${IMAGE_ARCH} AS build
 
 COPY --from=opt_python /opt/ /opt/
 
 RUN /opt/bin/python -m pip install requests
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_base:${IMAGE_ARCH}
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_base:${IMAGE_ARCH}
 
 COPY --from=build /opt/ /opt/
 
@@ -20,4 +20,3 @@ RUN mkdir -p /opt/bin/ && echo "#!/bin/bash" > /opt/bin/module && chmod a+x /opt
 
 
 
-LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers

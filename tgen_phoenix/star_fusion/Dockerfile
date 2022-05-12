@@ -1,19 +1,19 @@
-ARG SOURCE_DOCKER_REGISTRY=localhost:5000
-ARG IMAGE_ARCH=sandybridge
+ARG SOURCE_CONTAINER_REGISTRY=localhost:5000
+ARG IMAGE_ARCH=skylake
 ARG LOCAL_SOURCES_SERVER=http://localhost:8000
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_perl-5.32.0:${IMAGE_ARCH} AS opt_perl
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_db-6.2.32:${IMAGE_ARCH} AS opt_db
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_star-2.7.3a:${IMAGE_ARCH} AS opt_star
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_openjdk-8u:${IMAGE_ARCH} AS opt_openjdk
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_python-3.8.6.headless:${IMAGE_ARCH} AS opt_python
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_bowtie2-2.4.2:${IMAGE_ARCH} AS opt_bowtie2
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_samtools-1.10:${IMAGE_ARCH} AS opt_samtools
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_grep-3.4:${IMAGE_ARCH} AS opt_grep
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_bzip2-1.0.8:${IMAGE_ARCH} AS opt_bzip2
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_gmap-2017.11.15:${IMAGE_ARCH} AS opt_gmap
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_perl-5.32.0:${IMAGE_ARCH} AS opt_perl
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_db-6.2.32:${IMAGE_ARCH} AS opt_db
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_star-2.7.3a:${IMAGE_ARCH} AS opt_star
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_openjdk-8u:${IMAGE_ARCH} AS opt_openjdk
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_python-3.8.6.headless:${IMAGE_ARCH} AS opt_python
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_bowtie2-2.4.2:${IMAGE_ARCH} AS opt_bowtie2
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_samtools-1.10:${IMAGE_ARCH} AS opt_samtools
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_grep-3.4:${IMAGE_ARCH} AS opt_grep
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_bzip2-1.0.8:${IMAGE_ARCH} AS opt_bzip2
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_gmap-2017.11.15:${IMAGE_ARCH} AS opt_gmap
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_tools:${IMAGE_ARCH} AS build_1
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_tools:${IMAGE_ARCH} AS build_1
 
 ARG IMAGE_ARCH
 ARG LOCAL_SOURCES_SERVER
@@ -62,7 +62,7 @@ RUN mkdir -p /tmp/scratch/build && \
     mkdir -p /opt && cd /opt/ && tar -xf /tmp/scratch/salmon_0.14.2_linux_x86_64.tar.gz && \
     cd / && rm -rf /tmp/scratch
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_tools:${IMAGE_ARCH} AS build_2
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_tools:${IMAGE_ARCH} AS build_2
 
 ARG IMAGE_ARCH
 ARG LOCAL_SOURCES_SERVER
@@ -76,7 +76,7 @@ RUN mkdir -p /opt && \
                              CXXFLAGS="-O3 -march=${IMAGE_ARCH}" \
                              make -j$(nproc)
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_tools:${IMAGE_ARCH} AS build_3
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_tools:${IMAGE_ARCH} AS build_3
 
 ARG IMAGE_ARCH
 ARG LOCAL_SOURCES_SERVER
@@ -90,7 +90,7 @@ ENV LD_LIBRARY_PATH /opt/lib64/:/opt/lib/:${LD_LIBRARY_PATH}
 RUN python -m pip install numpy
 RUN python -m pip install igv_reports
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_base:${IMAGE_ARCH}
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_base:${IMAGE_ARCH}
 
 COPY --from=opt_star /opt/ /opt/
 COPY --from=opt_openjdk /opt/ /opt/
@@ -110,4 +110,3 @@ ENV JAVA_HOME /opt/java
 ENV TRINITY_HOME /opt/trinityrnaseq
 
 RUN mkdir -p /tools/ && ln -s /opt/bin /tools/
-LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers

@@ -1,8 +1,8 @@
-ARG SOURCE_DOCKER_REGISTRY=localhost:5000
-ARG IMAGE_ARCH=sandybridge
+ARG SOURCE_CONTAINER_REGISTRY=localhost:5000
+ARG IMAGE_ARCH=skylake
 ARG LOCAL_SOURCES_SERVER=http://localhost:8000
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_tools:${IMAGE_ARCH} AS build
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_tools:${IMAGE_ARCH} AS build
 
 ARG IMAGE_ARCH
 ARG LOCAL_SOURCES_SERVER
@@ -14,7 +14,7 @@ RUN mkdir -p /tmp/scratch/build && \
     mkdir -p /opt && cd /opt/ && tar -xf /tmp/scratch/salmon_0.14.2_linux_x86_64.tar.gz && \
     cd / && rm -rf /tmp/scratch
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_base:${IMAGE_ARCH}
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_base:${IMAGE_ARCH}
 
 COPY --from=build /opt/ /opt/
 
@@ -24,4 +24,3 @@ ENV LD_LIBRARY_PATH /opt/salmon-latest_linux_x86_64/lib/:${LD_LIBRARY_PATH}
 RUN mkdir -p /opt/bin/ && echo "#!/bin/bash" > /opt/bin/module && chmod a+x /opt/bin/module
 
 
-LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers

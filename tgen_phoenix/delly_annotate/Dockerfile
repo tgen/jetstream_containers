@@ -1,12 +1,12 @@
-ARG SOURCE_DOCKER_REGISTRY=localhost:5000
-ARG IMAGE_ARCH=sandybridge
+ARG SOURCE_CONTAINER_REGISTRY=localhost:5000
+ARG IMAGE_ARCH=skylake
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_python-3.8.6.headless:${IMAGE_ARCH} AS opt_python
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_bcftools-1.9:${IMAGE_ARCH} AS opt_bcftools
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_bedtools-2.29.2:${IMAGE_ARCH} AS opt_bedtools
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_grep-3.4:${IMAGE_ARCH} AS opt_grep
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_python-3.8.6.headless:${IMAGE_ARCH} AS opt_python
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_bcftools-1.9:${IMAGE_ARCH} AS opt_bcftools
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_bedtools-2.29.2:${IMAGE_ARCH} AS opt_bedtools
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_grep-3.4:${IMAGE_ARCH} AS opt_grep
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_tools:${IMAGE_ARCH} AS build
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_tools:${IMAGE_ARCH} AS build
 
 ARG IMAGE_ARCH
 ARG LOCAL_SOURCES_SERVER
@@ -19,7 +19,7 @@ ENV LD_LIBRARY_PATH /opt/lib64/:/opt/lib/:${LD_LIBRARY_PATH}
 
 RUN python -m pip install pysam pybedtools pandas
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_base:${IMAGE_ARCH}
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_base:${IMAGE_ARCH}
 
 COPY --from=opt_bcftools /opt/ /opt/
 COPY --from=opt_bedtools /opt/ /opt/
@@ -32,4 +32,3 @@ COPY svtop.delly.sv_annotation.parallel.py /opt/phoenix/required_scripts/
 
 RUN mkdir -p /opt/bin/ && echo "#!/bin/bash" > /opt/bin/module && chmod a+x /opt/bin/module
 
-LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers

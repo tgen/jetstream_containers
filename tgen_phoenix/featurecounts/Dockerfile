@@ -1,10 +1,10 @@
-ARG SOURCE_DOCKER_REGISTRY=localhost:5000
-ARG IMAGE_ARCH=sandybridge
+ARG SOURCE_CONTAINER_REGISTRY=localhost:5000
+ARG IMAGE_ARCH=skylake
 ARG LOCAL_SOURCES_SERVER=http://localhost:8000
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_zlib-1.2.11:${IMAGE_ARCH} AS opt_zlib
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_zlib-1.2.11:${IMAGE_ARCH} AS opt_zlib
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_tools:${IMAGE_ARCH} AS build
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_tools:${IMAGE_ARCH} AS build
 
 ARG IMAGE_ARCH
 ARG LOCAL_SOURCES_SERVER
@@ -16,7 +16,7 @@ RUN mkdir -p /tmp/scratch/build && \
     mkdir -p /opt && cd /opt && tar -xvf /tmp/scratch/subread-2.0.1-Linux-x86_64.tar.gz && \
     cd / && rm -rf /tmp/scratch
 
-FROM ${SOURCE_DOCKER_REGISTRY}/leanix-1.0_opt_base:${IMAGE_ARCH}
+FROM ${SOURCE_CONTAINER_REGISTRY}/leanix-1.1_opt_base:${IMAGE_ARCH}
 
 COPY --from=build /opt/ /opt/
 COPY --from=opt_zlib /opt /opt
@@ -25,4 +25,3 @@ RUN mkdir -p /opt/bin/ && echo "#!/bin/bash" > /opt/bin/module && chmod a+x /opt
 
 ENV PATH /opt/subread-2.0.1-Linux-x86_64/bin/:${PATH}
 
-LABEL org.opencontainers.image.source=https://github.com/tgen/jetstream_containers

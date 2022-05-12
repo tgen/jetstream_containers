@@ -1,0 +1,2 @@
+#sample	id	sizeFilteredSegments	sizeGenomeTerritory	HRDscore
+Exome	.	36504681	2691955623	0.013560654822131887
