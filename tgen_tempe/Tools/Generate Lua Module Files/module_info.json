@@ -1,0 +1,27 @@
+[
+    {
+      "AppName": "BCFtools",
+      "AppVersion": "1.10.2",
+      "help_docs": [
+        "https://samtools.github.io/bcftools/howtos/index.html"
+      ],
+      "whatis": [
+        "Version: BCFtools 1.10.2: BCFtools is a program for variant calling and manipulating files in the Variant Call Format (VCF) and its binary counterpart BCF.",
+        "Keywords: VCF, BCF"
+      ],
+      "help_desc": [
+        "Description",
+        "===========",
+        "This is BCFtools 1.10.2 container."
+      ],
+      "cmd_aliases": {
+        "bcftools": "singularity exec /packages/containers/BCFtools/BCFtools-1.10.2.sif bcftools",
+        "color-chrs.pl": "singularity exec /packages/containers/BCFtools/BCFtools-1.10.2.sif color-chrs.pl",
+        "guess-ploidy.py": "singularity exec /packages/containers/BCFtools/BCFtools-1.10.2.sif guess-ploidy.py",
+        "plot-roh.py": "singularity exec /packages/containers/BCFtools/BCFtools-1.10.2.sif plot-roh.py",
+        "plot-vcfstats": "singularity exec /packages/containers/BCFtools/BCFtools-1.10.2.sif plot-vcfstats",
+        "run-roh.pl": "singularity exec /packages/containers/BCFtools/BCFtools-1.10.2.sif run-roh.pl",
+        "vcfutils.pl": "singularity exec /packages/containers/BCFtools/BCFtools-1.10.2.sif vcfutils.pl"
+      }
+    }
+  ]
