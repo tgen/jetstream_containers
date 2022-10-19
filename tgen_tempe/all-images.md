@@ -69,6 +69,8 @@
 | vcfmerger2 | 0.8.7 | EXTERNAL | ghcr.io/tgen/jetstream_containers/vcfmerger2:0.8.7 |
 | vcfmerger2 | 0.9.0 | EXTERNAL | ghcr.io/tgen/jetstream_containers/vcfmerger2:0.9.0 |
 | vcfmerger2 | 0.9.1 | EXTERNAL | ghcr.io/tgen/jetstream_containers/vcfmerger2:0.9.1 |
+| vcfmerger2 | 0.9.2 | EXTERNAL | ghcr.io/tgen/jetstream_containers/vcfmerger2:0.9.2 |
+| vcfmerger2 | 0.9.3 | EXTERNAL | ghcr.io/tgen/jetstream_containers/vcfmerger2:0.9.3 |
 | verify-bam-id2 | 1.0.6 | INTERNAL | pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/verify-bam-id2:1.0.6 |
 | verify-bam-id2 | 2.0.1 | EXTERNAL | ghcr.io/tgen/jetstream_containers/verify-bam-id2:2.0.1 |
 | vt | 0.57721 | INTERNAL | pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/vt:0.57721 |
