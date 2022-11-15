@@ -21,4 +21,4 @@ RUN wget https://github.com/nygenome/lancet/archive/v${LANCET_VER}.zip -q --show
 RUN echo "LANCET_VER=${LANCET_VER}"
 
 CMD [ "lancet", "-h" ]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/lancet:1.1.x
+#pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/lancet:1.1.x
