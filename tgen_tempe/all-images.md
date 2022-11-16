@@ -1,8 +1,8 @@
 | IMAGE         | VERSION       | ENVIRONMENT   | RESGISTRY URL |
 | ------------- | ------------- | ------------- | ------------- |
-| aj-python | 3.7 | EXTERNAL | ghcr.io/tgen/jetstream_containers/aj-python:3.7 |
 | aj-python | copy2-3.7 | EXTERNAL | ghcr.io/tgen/jetstream_containers/aj-python:copy2-3.7 |
 | aj-python | copy-3.7 | EXTERNAL | ghcr.io/tgen/jetstream_containers/aj-python:copy-3.7 |
+| aj-python | copy3 | EXTERNAL | ghcr.io/tgen/jetstream_containers/aj-python:copy3 |
 | bamtools | 2.5.1 | INTERNAL | pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/bamtools:2.5.1 |
 | bcftools | 1.10.2 | INTERNAL | pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/bcftools:1.10.2 |
 | bcftools | 1.16 | EXTERNAL | ghcr.io/tgen/jetstream_containers/bcftools:1.16 |
