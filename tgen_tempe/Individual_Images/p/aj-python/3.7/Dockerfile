@@ -1,3 +1,3 @@
 FROM python:latest
 COPY example.txt / 
-RUN echo "Testing script again"
+RUN echo "Made changes again ."
