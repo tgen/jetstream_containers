@@ -1,2 +1,2 @@
 FROM python:latest
-RUN echo "Testing "
+RUN echo "Should not be built"
