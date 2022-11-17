@@ -37,6 +37,7 @@
 | mcr | R2018a | INTERNAL | pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/mcr:R2018a |
 | msisensor | 1.1a | EXTERNAL | ghcr.io/tgen/jetstream_containers/msisensor:1.1a |
 | mutation-burden | 1.2.3 | EXTERNAL | ghcr.io/tgen/jetstream_containers/mutation-burden:1.2.3 |
+| mutation-burden | 1.2.4 | EXTERNAL | ghcr.io/tgen/jetstream_containers/mutation-burden:1.2.4 |
 | octopus | 0.6.3 | INTERNAL | pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/octopus:0.6.3 |
 | octopus | 0.7.4 | EXTERNAL | ghcr.io/tgen/jetstream_containers/octopus:0.7.4 |
 | pairoscope | 0.4.2 | INTERNAL | pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/pairoscope:0.4.2 |
