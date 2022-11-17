@@ -105,6 +105,9 @@ dnf install -y json-glib-devel \
                    gnu-free-sans-fonts \
                    python38-devel && \
 
+# We need to install UpSetR
+    Rscript -e 'install.packages("UpSetR", repos = "http://cran.us.r-project.org")' && \
+
 # Install latest VER of pip, required for cyvcf2 install
     pip install --upgrade pip && \
 # Pip install additional python requirements for vcfMerger2
