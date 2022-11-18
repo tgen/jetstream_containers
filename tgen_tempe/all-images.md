@@ -17,6 +17,7 @@
 | discordant-loci-extractor | 0.1.5 | INTERNAL | pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/discordant-loci-extractor:0.1.5 |
 | ensemble-vep | release_107.0 | EXTERNAL | ghcr.io/tgen/jetstream_containers/ensemble-vep:release_107.0 |
 | expansion_hunter | 4.0.2 | EXTERNAL | ghcr.io/tgen/jetstream_containers/expansion_hunter:4.0.2 |
+| fgbio | 2.0.2 | EXTERNAL | ghcr.io/tgen/jetstream_containers/fgbio:2.0.2 |
 | freebayes | 1.3.1 | EXTERNAL | ghcr.io/tgen/jetstream_containers/freebayes:1.3.1 |
 | freebayes | 1.3.6 | EXTERNAL | ghcr.io/tgen/jetstream_containers/freebayes:1.3.6 |
 | gatk | 4.1.8.0 | EXTERNAL | ghcr.io/tgen/jetstream_containers/gatk:4.1.8.0 |
