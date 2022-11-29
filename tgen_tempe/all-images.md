@@ -1,5 +1,6 @@
 | IMAGE         | VERSION       | ENVIRONMENT   | RESGISTRY URL |
 | ------------- | ------------- | ------------- | ------------- |
+| aj-python | 3.1 | EXTERNAL | ghcr.io/tgen/jetstream_containers/aj-python:3.1 |
 | aj-python | 3.72 | EXTERNAL | ghcr.io/tgen/jetstream_containers/aj-python:3.72 |
 | bamtools | 2.5.1 | INTERNAL | pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/bamtools:2.5.1 |
 | bcftools | 1.10.2 | INTERNAL | pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/bcftools:1.10.2 |
