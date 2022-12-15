@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19 as build1
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19 as build1
 
 ARG SAMTOOLS_VER=1.16.1
 
@@ -26,7 +26,7 @@ RUN wget https://github.com/samtools/samtools/releases/download/${SAMTOOLS_VER}/
     make install
 
 # Finalize container without the build tools
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 COPY --from=build1 /usr/local/ /usr/local
 
@@ -38,4 +38,4 @@ RUN dnf upgrade -y && \
                     libcurl \
                     openssl-libs
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/samtools:1.16.1
+# ghcr.io/tgen/jetstream_containers/samtools:1.16.1

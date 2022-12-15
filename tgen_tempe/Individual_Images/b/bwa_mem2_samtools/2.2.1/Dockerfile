@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19 
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19 
 
 ENV PATH=$PATH:/usr/local/bin/bwa-mem2
 
@@ -45,7 +45,7 @@ RUN wget https://github.com/bwa-mem2/bwa-mem2/releases/download/v${BWA_MEM2_VER}
 WORKDIR /bwa-mem2 
 
 CMD [ "bwa-mem2" ]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/bwa_mem2_samtools:2.2.1
+# ghcr.io/tgen/jetstream_containers/bwa_mem2_samtools:2.2.1
 
 
 

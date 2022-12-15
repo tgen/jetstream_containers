@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 # Versions
 ARG MANTA_VER=1.6.0
@@ -23,5 +23,5 @@ RUN wget https://github.com/Illumina/manta/releases/download/v${MANTA_VER}/manta
 RUN echo "MANTA_VER=${MANTA_VER}"
 
 CMD ["python", "/usr/local/bin/configManta.py", "--help"]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/manta:1.6.0
+# ghcr.io/tgen/jetstream_containers/manta:1.6.0
 

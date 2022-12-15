@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 # Versions
 ARG FREEBAYES_VER=1.3.6
@@ -16,4 +16,4 @@ RUN wget https://github.com/freebayes/freebayes/releases/download/v${FREEBAYES_V
     chmod +x /usr/local/bin/freebayes &&\
     rm -rf freebayes-${FREEBAYES_VER}-linux-amd64-static.gz
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/freebayes:1.3.6
+# ghcr.io/tgen/jetstream_containers/freebayes:1.3.6

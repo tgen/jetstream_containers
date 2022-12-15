@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 ENV PATH=$PATH:/tHReD-1.1.0
 
@@ -21,4 +21,4 @@ RUN tar zxf tHReD-1.1.0.tar.gz &&\
     rm -rf tHReD-1.1.0.tar.gz &&\
     chmod a+x /tHReD-1.1.0/tHReD.py
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/thred:1.1.0
+# ghcr.io/tgen/jetstream_containers/thred:1.1.0

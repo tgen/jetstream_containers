@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/r:3.6.1
+FROM ghcr.io/tgen/jetstream_containers/r:3.6.1
 
 # Versions
 ARG VARDICT_VER=1.7.0
@@ -21,4 +21,4 @@ RUN wget https://github.com/AstraZeneca-NGS/VarDictJava/releases/download/${VARD
 RUN echo "VARDICT_VER=${VARDICT_VER}"
 
 CMD [ "VarDict", "-H" ]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/vardict:1.7.9
+# ghcr.io/tgen/jetstream_containers/vardict:1.7.9

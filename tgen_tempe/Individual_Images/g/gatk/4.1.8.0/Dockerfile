@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/r:3.6.1
+FROM ghcr.io/tgen/jetstream_containers/r:3.6.1
 
 # Environment Variables
 ENV PATH=$PATH:/gatk
@@ -50,4 +50,4 @@ RUN conda run -n gatk conda install -y h5py=2.10.0
 RUN echo "GATK_VER=${GATK_VER}"
 
 CMD ["bash", "--init-file", "/gatk/gatkenv.rc"]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/gatk:4.1.8.0
+# ghcr.io/tgen/jetstream_containers/gatk:4.1.8.0

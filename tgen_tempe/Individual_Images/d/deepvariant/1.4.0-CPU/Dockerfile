@@ -1,2 +1,2 @@
 FROM google/deepvariant:1.4.0
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/deepvariant:1.4.0-CPU
+# ghcr.io/tgen/jetstream_containers/deepvariant:1.4.0-CPU

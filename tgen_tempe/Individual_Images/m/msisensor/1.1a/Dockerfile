@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 ENV PATH=/msisensor-pro-1.1.a/binary:$PATH
 
@@ -38,4 +38,4 @@ RUN wget https://github.com/xjtu-omics/msisensor-pro/archive/refs/tags/${MSISENS
     rm ${MSISENSOR_VER}.tar.gz
 
 CMD [ "msisensor-pro","--help" ]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/msisensor:1.1.a
+# ghcr.io/tgen/jetstream_containers/msisensor:1.1.a

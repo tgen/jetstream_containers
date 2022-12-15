@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/bcftools:1.10.2
+FROM ghcr.io/tgen/jetstream_containers/bcftools:1.10.2
 
 # Environment Variables
 ENV PATH=$PATH:/snpEff:/clinEff:/snpEff/scripts
@@ -28,4 +28,4 @@ RUN echo "SNPEFF_VER=${SNPEFF_VER}"
 
 CMD [ "java","-jar","snpEff.jar","-h" ]
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/snpeff:4_3t
+# ghcr.io/tgen/jetstream_containers/snpeff:4_3t

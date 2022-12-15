@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/r:3.6.1
+FROM ghcr.io/tgen/jetstream_containers/r:3.6.1
 
 COPY module_install.sh /module_install.sh
 COPY R_modules.csv /R_modules.csv

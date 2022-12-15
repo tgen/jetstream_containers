@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 ARG HTSLIB_VER=1.16
 RUN dnf upgrade -y && dnf install -y \ 
@@ -28,4 +28,4 @@ RUN wget https://github.com/samtools/htslib/releases/download/${HTSLIB_VER}/htsl
     rm -rf htslib-${HTSLIB_VER} &&\
     rm htslib-${HTSLIB_VER}.tar.bz2
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/htslib:1.16
+# ghcr.io/tgen/jetstream_containers/htslib:1.16

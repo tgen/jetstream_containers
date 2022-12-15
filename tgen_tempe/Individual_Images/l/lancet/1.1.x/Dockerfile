@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 # Versions
 ARG LANCET_VER=1.1.x
@@ -21,4 +21,4 @@ RUN wget https://github.com/nygenome/lancet/archive/v${LANCET_VER}.zip -q --show
 RUN echo "LANCET_VER=${LANCET_VER}"
 
 CMD [ "lancet", "-h" ]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/lancet:1.1.x
+# ghcr.io/tgen/jetstream_containers/lancet:1.1.x

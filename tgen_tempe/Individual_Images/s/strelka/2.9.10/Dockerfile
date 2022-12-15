@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 # Versions
 ARG STRELKA_VER=2.9.10
@@ -20,4 +20,4 @@ RUN wget https://github.com/Illumina/strelka/releases/download/v${STRELKA_VER}/s
 RUN echo "STRELKA_VER=${STRELKA_VER}"
 
 # CMD ["bash", "usr/local/bin/runStrelkaSomaticWorkflowDemo.bash"]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/strelka:2.9.10
+# ghcr.io/tgen/jetstream_containers/strelka:2.9.10

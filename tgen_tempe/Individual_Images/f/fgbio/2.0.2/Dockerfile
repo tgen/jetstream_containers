@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/bwa_mem2_samtools:2.2.1
+FROM ghcr.io/tgen/jetstream_containers/bwa_mem2_samtools:2.2.1
 # Versions
 ARG FGBIO_VER=2.0.2
 ENV SRC=/usr/local/src
@@ -20,4 +20,4 @@ RUN cd /usr/bin && \
 
 WORKDIR /
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/fgbio:2.0.2
+# ghcr.io/tgen/jetstream_containers/fgbio:2.0.2

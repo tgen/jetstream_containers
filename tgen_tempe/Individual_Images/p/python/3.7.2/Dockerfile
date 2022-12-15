@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 # Versions
 ARG PYTHON_VER=3.7.2
@@ -34,4 +34,4 @@ RUN ln -sfn /usr/local/bin/python3.7 /usr/bin/python3.7 &&\
     pip3.7 install --upgrade pip &&\
     python3.7 -m pip install pysam
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/python:3.7.2
+# ghcr.io/tgen/jetstream_containers/python:3.7.2

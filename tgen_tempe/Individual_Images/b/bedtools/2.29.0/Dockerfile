@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 # Versions
 ARG BEDTOOLS_VER=2.29.0
@@ -48,4 +48,4 @@ RUN echo "### BEDTOOLS_VER=${BEDTOOLS_VER} ### " &&\
     echo "### BAMTOOLS_VER=${BAMTOOLS_VER} ###"
 
 CMD [ "bedtools", "--help" ]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/bedtools:2.29.0
+# ghcr.io/tgen/jetstream_containers/bedtools:2.29.0

@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/r:3.6.1
+FROM ghcr.io/tgen/jetstream_containers/r:3.6.1
 
 # Environment Variables
 ENV PATH=$PATH:/snpSniffer
@@ -29,4 +29,4 @@ RUN chmod +x module_install.sh && \
     rm req_modules.csv
 
 CMD [ "snpSniffer" , "--help"]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/snpsniffer:7.0.0
+# ghcr.io/tgen/jetstream_containers/snpsniffer:7.0.0

@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/r:3.6.1
+FROM ghcr.io/tgen/jetstream_containers/r:3.6.1
 
 ARG BCFTOOLS_VER=1.10.2
 ARG SAMTOOLS_VER=1.10
@@ -119,4 +119,4 @@ dnf install -y json-glib-devel \
     dnf clean all    
 
 CMD [ "vcfMerger2.py", "--help" ]
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/vcfmerger2:0.9.2
+# ghcr.io/tgen/jetstream_containers/vcfmerger2:0.9.2

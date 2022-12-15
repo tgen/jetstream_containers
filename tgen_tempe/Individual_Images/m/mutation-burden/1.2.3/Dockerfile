@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/r:3.6.1
+FROM ghcr.io/tgen/jetstream_containers/r:3.6.1
 
 ENV PATH=/tgen_mutation_burden-1.2.3:$PATH
 ENV LD_LIBRARY_PATH /usr/local/lib/:$LD_LIBRARY_PATH
@@ -109,4 +109,4 @@ RUN tar zxf tgen_mutation_burden-${MUTATION_BURDEN_VER}.tar.gz &&\
     cd tgen_mutation_burden-${MUTATION_BURDEN_VER} &&\
     chmod 755 tgen_mutation_burden.sh
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/mutation-burden:1.2.3
+# ghcr.io/tgen/jetstream_containers/mutation-burden:1.2.3

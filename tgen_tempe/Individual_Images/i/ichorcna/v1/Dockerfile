@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/r-with_modules:3.6.1
+FROM ghcr.io/tgen/jetstream_containers/r-with_modules:3.6.1
 
 # Installing requirements for HMMCopy_utils
 RUN dnf upgrade -y && dnf install -y \
@@ -28,4 +28,4 @@ RUN wget https://github.com/shahcompbio/hmmcopy_utils/archive/master.zip &&\
 RUN R -e 'install.packages("devtools",dependencies=TRUE,repos = "http://cran.us.r-project.org"); library(devtools);  install_github("broadinstitute/ichorCNA")' &&\
     echo "BiocManager::install(\"BSgenome.Hsapiens.UCSC.hg38\")" | R --no-save
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/ichorcna:v1
+# ghcr.io/tgen/jetstream_containers/ichorcna:v1

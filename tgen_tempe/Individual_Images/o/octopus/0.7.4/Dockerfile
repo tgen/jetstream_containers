@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19 as build1
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19 as build1
 
 ARG HTSLIB_VER=1.15.1
 ARG OCTOPUS_VER=0.7.4
@@ -44,7 +44,7 @@ RUN dnf upgrade -y && \
     cd / && \
     mv octopus-${OCTOPUS_VER} octopus
 
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 ENV LD_LIBRARY_PATH=/usr/local/lib/
 ENV PATH=/octopus/bin:$PATH

@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19 as build
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19 as build
 
 ENV LD_LIBRARY_PATH /usr/local/lib/:$LD_LIBRARY_PATH
 
@@ -13,7 +13,7 @@ RUN cd bcftools-${bcftoosVer} && ./configure --enable-libgsl && make && make ins
 RUN rm bcftools-${bcftoosVer}.tar.bz2
 RUN rm -rf bcftools-${bcftoosVer}
 
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 ENV LD_LIBRARY_PATH /usr/local/lib/:$LD_LIBRARY_PATH
 
@@ -23,4 +23,4 @@ COPY --from=build /usr/local/ /usr/local
 RUN dnf upgrade -y
 RUN dnf install -y zlib gsl perl-libs bzip2-libs xz-libs libcurl openssl-libs
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/bcftools:1.16
+# ghcr.io/tgen/jetstream_containers/bcftools:1.16

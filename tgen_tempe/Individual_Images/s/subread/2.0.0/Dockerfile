@@ -1,4 +1,4 @@
-FROM pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/rocky8_with_epel:2022.04.19
+FROM ghcr.io/tgen/jetstream_containers/rocky8_with_epel:2022.04.19
 
 # Versions
 ARG SUBREAD_VER=2.0.0
@@ -19,4 +19,4 @@ RUN wget https://sourceforge.net/projects/subread/files/subread-${SUBREAD_VER}/s
 # Version Checks
 RUN echo "SUBREAD_VER=${SUBREAD_VER}"
 
-# pbc-art-prd01.ad.tgen.org/hpc-virtual-containers/subread:2.0.0.0
+# ghcr.io/tgen/jetstream_containers/subread:2.0.0.0
