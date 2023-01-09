@@ -46,8 +46,5 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &
 #https://gatk.broadinstitute.org/hc/en-us/articles/360052489832-Known-Issue-with-CNNScoreVariants-version-4-1-9-0
 RUN conda run -n gatk conda install -y h5py=2.10.0
 
-# Version Check
-RUN echo "GATK_VER=${GATK_VER}"
-
 CMD ["bash", "--init-file", "/gatk/gatkenv.rc"]
 # ghcr.io/tgen/jetstream_containers/gatk:4.1.8.0
