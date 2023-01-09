@@ -1,6 +1,7 @@
 ################################
 # Stage 1 - docker container to build ensembl-vep #
 ###################################################
+#FIXME: Does not build
 FROM ghcr.io/tgen/jetstream_containers/debianbase:10 as builder
 
 # Update aptitude and install some required packages
