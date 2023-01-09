@@ -28,4 +28,4 @@ RUN wget https://github.com/shahcompbio/hmmcopy_utils/archive/master.zip &&\
 RUN R -e 'install.packages("devtools",dependencies=TRUE,repos = "http://cran.us.r-project.org"); library(devtools);  install_github("broadinstitute/ichorCNA")' &&\
     echo "BiocManager::install(\"BSgenome.Hsapiens.UCSC.hg38\")" | R --no-save
 
-# ghcr.io/tgen/jetstream_containers/ichorcna:v1
+# ghcr.io/tgen/jetstream_containers/ichorcna:v1 
