@@ -38,4 +38,4 @@ RUN wget https://github.com/xjtu-omics/msisensor-pro/archive/refs/tags/${MSISENS
     rm ${MSISENSOR_VER}.tar.gz
 
 CMD [ "msisensor-pro","--help" ]
-# ghcr.io/tgen/jetstream_containers/msisensor:1.1.a
+# ghcr.io/tgen/jetstream_containers/msisensor:1.1.a 
