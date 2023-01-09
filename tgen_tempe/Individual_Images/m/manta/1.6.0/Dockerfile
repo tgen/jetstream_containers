@@ -19,9 +19,6 @@ RUN wget https://github.com/Illumina/manta/releases/download/v${MANTA_VER}/manta
     cd / && \
     rm -rf build manta-${MANTA_VER}.release_src manta-${MANTA_VER}.release_src.tar.bz2 manta-${MANTA_VER}.release_src manta-${MANTA_VER}.release_src.tar.bz2
 
-# Version Checks
-RUN echo "MANTA_VER=${MANTA_VER}"
-
 CMD ["python", "/usr/local/bin/configManta.py", "--help"]
 # ghcr.io/tgen/jetstream_containers/manta:1.6.0
 
