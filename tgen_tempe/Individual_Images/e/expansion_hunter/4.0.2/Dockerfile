@@ -27,4 +27,4 @@ RUN wget https://github.com/Illumina/ExpansionHunter/releases/download/v${EXPANS
 
 CMD [ "ExpansionHunter" ]
 
-# ghcr.io/tgen/jetstream_containers/expansion_hunter:4.0.2 
+# ghcr.io/tgen/jetstream_containers/expansion_hunter:4.0.2
