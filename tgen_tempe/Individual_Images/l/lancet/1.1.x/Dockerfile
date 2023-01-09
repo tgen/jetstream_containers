@@ -17,8 +17,5 @@ RUN wget https://github.com/nygenome/lancet/archive/v${LANCET_VER}.zip -q --show
     cd / && \
     rm -rf lancet-${LANCET_VER}
 
-# Version Checks
-RUN echo "LANCET_VER=${LANCET_VER}"
-
 CMD [ "lancet", "-h" ]
 # ghcr.io/tgen/jetstream_containers/lancet:1.1.x
