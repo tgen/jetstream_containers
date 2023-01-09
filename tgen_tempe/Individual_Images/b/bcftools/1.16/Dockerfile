@@ -23,4 +23,4 @@ COPY --from=build /usr/local/ /usr/local
 RUN dnf upgrade -y
 RUN dnf install -y zlib gsl perl-libs bzip2-libs xz-libs libcurl openssl-libs
 
-# ghcr.io/tgen/jetstream_containers/bcftools:1.16
+# ghcr.io/tgen/jetstream_containers/bcftools:1.16 

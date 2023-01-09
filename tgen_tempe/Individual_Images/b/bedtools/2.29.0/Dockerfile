@@ -43,9 +43,5 @@ RUN alternatives --set python /usr/bin/python3.8 &&\
     cd / &&\
     rm -rf bedtools2-${BEDTOOLS_VER}
 
-# Version Checks
-RUN echo "### BEDTOOLS_VER=${BEDTOOLS_VER} ### " &&\
-    echo "### BAMTOOLS_VER=${BAMTOOLS_VER} ###"
-
 CMD [ "bedtools", "--help" ]
-# ghcr.io/tgen/jetstream_containers/bedtools:2.29.0
+# ghcr.io/tgen/jetstream_containers/bedtools:2.29.0 
