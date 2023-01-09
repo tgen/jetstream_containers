@@ -16,4 +16,4 @@ RUN wget https://github.com/freebayes/freebayes/releases/download/v${FREEBAYES_V
     chmod +x /usr/local/bin/freebayes &&\
     rm -rf freebayes-${FREEBAYES_VER}-linux-amd64-static.gz
 
-# ghcr.io/tgen/jetstream_containers/freebayes:1.3.6
+# ghcr.io/tgen/jetstream_containers/freebayes:1.3.6 

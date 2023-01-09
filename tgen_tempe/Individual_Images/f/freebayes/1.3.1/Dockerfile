@@ -14,8 +14,5 @@ RUN wget https://github.com/freebayes/freebayes/releases/download/v${FREEBAYES_V
     mv freebayes-v${FREEBAYES_VER} /usr/local/bin/freebayes && \
     chmod +x /usr/local/bin/freebayes
 
-# Version Checks
-RUN echo "FREEBAYES_VER=${FREEBAYES_VER}"
-
 CMD [ "freebayes", "--help" ]
-# ghcr.io/tgen/jetstream_containers/freebayes:1.3.1
+# ghcr.io/tgen/jetstream_containers/freebayes:1.3.1 
