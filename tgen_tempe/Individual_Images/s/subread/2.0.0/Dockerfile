@@ -16,7 +16,4 @@ RUN wget https://sourceforge.net/projects/subread/files/subread-${SUBREAD_VER}/s
     cp -R /subread-${SUBREAD_VER}-source/bin/* /usr/local/bin && \
     rm -rf subread-${SUBREAD_VER}-source
 
-# Version Checks
-RUN echo "SUBREAD_VER=${SUBREAD_VER}"
-
 # ghcr.io/tgen/jetstream_containers/subread:2.0.0.0
