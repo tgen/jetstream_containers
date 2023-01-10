@@ -29,4 +29,4 @@ RUN chmod +x module_install.sh && \
     rm req_modules.csv
 
 CMD [ "snpSniffer" , "--help"]
-# ghcr.io/tgen/jetstream_containers/snpsniffer:7.0.0
+# ghcr.io/tgen/jetstream_containers/snpsniffer:7.0.0 
