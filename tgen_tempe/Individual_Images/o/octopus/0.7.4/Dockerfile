@@ -62,3 +62,5 @@ RUN dnf upgrade -y && \
                    python39 \
                    boost \
                    gmp
+
+# ghcr.io/tgen/jetstream_containers/octopus:0.7.4
