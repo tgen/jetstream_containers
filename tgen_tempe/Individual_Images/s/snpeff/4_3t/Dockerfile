@@ -23,9 +23,6 @@ RUN wget https://sourceforge.net/projects/snpeff/files/snpEff_v${SNPEFF_VER}_cor
 
 WORKDIR /snpEff
 
-# Version Checks
-RUN echo "SNPEFF_VER=${SNPEFF_VER}"
-
 CMD [ "java","-jar","snpEff.jar","-h" ]
 
 # ghcr.io/tgen/jetstream_containers/snpeff:4_3t
