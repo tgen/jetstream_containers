@@ -21,4 +21,4 @@ RUN tar zxf tHReD-1.1.0.tar.gz &&\
     rm -rf tHReD-1.1.0.tar.gz &&\
     chmod a+x /tHReD-1.1.0/tHReD.py
 
-# ghcr.io/tgen/jetstream_containers/thred:1.1.0
+# ghcr.io/tgen/jetstream_containers/thred:1.1.0 
