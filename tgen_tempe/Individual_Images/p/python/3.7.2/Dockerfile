@@ -34,4 +34,4 @@ RUN ln -sfn /usr/local/bin/python3.7 /usr/bin/python3.7 &&\
     pip3.7 install --upgrade pip &&\
     python3.7 -m pip install pysam
 
-# ghcr.io/tgen/jetstream_containers/python:3.7.2
+# ghcr.io/tgen/jetstream_containers/python:3.7.2 
