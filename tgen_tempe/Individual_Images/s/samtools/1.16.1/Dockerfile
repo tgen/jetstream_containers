@@ -38,4 +38,4 @@ RUN dnf upgrade -y && \
                     libcurl \
                     openssl-libs
 
-# ghcr.io/tgen/jetstream_containers/samtools:1.16.1
+# ghcr.io/tgen/jetstream_containers/samtools:1.16.1 
