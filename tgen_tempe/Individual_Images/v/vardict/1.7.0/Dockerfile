@@ -17,8 +17,5 @@ RUN wget https://github.com/AstraZeneca-NGS/VarDictJava/releases/download/${VARD
     cd / && \
     rm -rf VarDict-${VARDICT_VER}
 
-# Version Checks
-RUN echo "VARDICT_VER=${VARDICT_VER}"
-
 CMD [ "VarDict", "-H" ]
 # ghcr.io/tgen/jetstream_containers/vardict:1.7.9
