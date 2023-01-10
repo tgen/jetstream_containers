@@ -16,8 +16,5 @@ RUN wget https://github.com/Illumina/strelka/releases/download/v${STRELKA_VER}/s
     cd / &&\
     rm -rf build strelka-${STRELKA_VER}.release_src strelka-${STRELKA_VER}.release_src.tar.bz2
 
-# Version Checks
-RUN echo "STRELKA_VER=${STRELKA_VER}"
-
 # CMD ["bash", "usr/local/bin/runStrelkaSomaticWorkflowDemo.bash"]
 # ghcr.io/tgen/jetstream_containers/strelka:2.9.10
