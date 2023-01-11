@@ -186,4 +186,4 @@ RUN echo >> $OPT/.profile && \
     ./INSTALL.pl -a a -l -n && rm -rf t travisci .travis.yml
 
 LABEL org.opencontainers.image.source https://github.com/tgen/jetstream_containers
-# ghcr.io/tgen/jetstream_containers/ensembl-vep:release_107.0
+# ghcr.io/tgen/jetstream_containers/ensembl-vep:release_107.0 
