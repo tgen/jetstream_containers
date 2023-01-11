@@ -1,4 +1,4 @@
-FROM ghcr.io/tgen/jetstream_containers/r:3.6.1
+FROM ghcr.io/tgen/jetstream_containers/r-base:3.6.1
 
 ENV PATH=/tgen_mutation_burden-1.2.4:$PATH
 ENV LD_LIBRARY_PATH /usr/local/lib/:$LD_LIBRARY_PATH
