@@ -1,4 +1,4 @@
-FROM ghcr.io/tgen/jetstream_containers/r:3.6.1 
+FROM ghcr.io/tgen/jetstream_containers/r-base:3.6.1 
 
 # Installing requirements for HMMCopy_utils
 RUN dnf upgrade -y && dnf install -y \
