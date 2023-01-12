@@ -1,12 +1,11 @@
 ################################
 # Stage 1 - docker container to build ensembl-vep #
 ###################################################
-#FIXME: Does not build
 FROM ghcr.io/tgen/jetstream_containers/debianbase:10 as builder
 
 # Update aptitude and install some required packages
 # a lot of them are required for Bio::DB::BigFile
-RUN apt update && apt full-upgrade && apt -y install \
+RUN apt update -y && apt full-upgrade -y && apt -y install \
     build-essential \
     git \
     libpng-dev \
@@ -85,7 +84,7 @@ FROM ghcr.io/tgen/jetstream_containers/debianbase:10
 
 # Update aptitude and install some required packages
 # a lot of them are required for Bio::DB::BigFile
-RUN apt update && apt full-upgrade && apt -y install \
+RUN apt update -y && apt full-upgrade -y && apt install -y \
     build-essential \
     cpanminus \
     curl \
