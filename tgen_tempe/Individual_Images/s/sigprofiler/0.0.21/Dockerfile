@@ -16,6 +16,7 @@ RUN pip install --upgrade pip && \
 # Copy in sigprofiler_assignment script
 WORKDIR /sigprofiler
 COPY sigprofiler_assignment.py .
+RUN chmod +x sigprofiler_assignment.py
 
 # Pull GRCh38 signatures for sigprofiler
 WORKDIR /sigprofiler_resources
