@@ -1,0 +1,93 @@
+FROM python:3.7.2-slim
+
+RUN apt update && \
+    apt install -y make gcc perl zlib1g-dev libbz2-dev liblzma-dev libcurl4-gnutls-dev libssl-dev && \
+    python3.7 -m pip install \
+    alabaster==0.7.12 \
+    asn1crypto==0.24.0 \
+    atomicwrites==1.3.0 \
+    attrs==19.1.0 \
+    Babel==2.6.0 \
+    bcrypt==3.1.6 \
+    biopython==1.78 \
+    bitstring==3.1.5 \
+    blist==1.3.6 \
+    certifi==2019.3.9 \
+    cffi==1.12.2 \
+    chardet==3.0.4 \
+    Click==7.0 \
+    colormath==3.0.0 \
+    cryptography==2.6.1 \
+    cycler==0.10.0 \
+    Cython==0.29.6 \
+    deap==1.2.2 \
+    decorator==4.3.2 \
+    docopt==0.6.2 \
+    docutils==0.14 \
+    ecdsa==0.13 \
+    future==0.17.1 \
+    gatktool==0.0.1 \
+    idna==2.8 \
+    igv-reports==0.9.8 \
+    imagesize==1.1.0 \
+    intervaltree==3.0.2 \
+    ipaddress==1.0.22 \
+    Jinja2==2.10 \
+    joblib==0.13.2 \
+    kiwisolver==1.1.0 \
+    liac-arff==2.4.0 \
+    lzstring==1.0.4 \
+    Markdown==3.1.1 \
+    MarkupSafe==1.1.1 \
+    matplotlib==2.2.4 \
+    mock==2.0.0 \
+    more-itertools==6.0.0 \
+    mpmath==1.1.0 \
+    multiqc==1.7 \
+    natsort==5.0.3 \
+    netaddr==0.7.19 \
+    netifaces==0.10.9 \
+    networkx==2.4 \
+    nose==1.3.7 \
+    numpy==1.17.3 \
+    packaging==19.0 \
+    pandas==0.25.3 \
+    paramiko==2.4.2 \
+    pathlib2==2.3.3 \
+    paycheck==1.0.2 \
+    pbr==5.1.3 \
+    Pillow==6.0.0 \
+    pluggy==0.9.0 \
+    psutil==5.6.1 \
+    py==1.8.0 \
+    py-expression-eval==0.3.6 \
+    pyasn1==0.4.5 \
+    pycparser==2.19 \
+    pycrypto==2.6.1 \
+    Pygments==2.3.1 \
+    PyNaCl==1.3.0 \
+    pyparsing==2.3.1 \
+    pysam==0.15.3 \
+    pytest==4.3.1 \
+    python-dateutil==2.8.0 \
+    pytz==2018.9 \
+    PyYAML==5.1.2 \
+    requests==2.21.0 \
+    scandir==1.10.0 \
+    setuptools-scm==3.2.0 \
+    simplejson==3.16.0 \
+    six==1.12.0 \
+    snowballstemmer==1.2.1 \
+    sortedcontainers==2.1.0 \
+    spectra==0.0.11 \
+    Sphinx==1.8.5 \
+    sphinxcontrib-websupport==1.1.0 \
+    sympy==1.4 \
+    tabulate==0.8.3 \
+    ujson==1.35 \
+    urllib3==1.24.1 \
+    virtualenv==16.4.3 \
+    xlrd==1.2.0 && \
+    rm -rf /var/lib/apt/lists/*
+
+# ghcr.io/tgen/jetstream_containers/python:3.7.2-with-modules
